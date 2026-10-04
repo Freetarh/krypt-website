@@ -1,0 +1,90 @@
+:root {
+  color-scheme: dark;
+  background: #08090b;
+  color: #dedbd8;
+  font-family: Georgia, "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; min-width: 0; }
+
+body {
+  background:
+    radial-gradient(ellipse at 50% 110%, #41121866 0%, #240d1233 29%, transparent 62%),
+    radial-gradient(ellipse at 50% 30%, #13151a 0%, #08090b 65%);
+}
+
+.crypt {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 3rem 1.5rem;
+}
+
+.identity {
+  width: min(100%, 38rem);
+  text-align: center;
+}
+
+.logo {
+  /* Crop only the empty black margins in the page; retain the original file. */
+  width: min(100%, 29rem);
+  aspect-ratio: 1.08;
+  overflow: hidden;
+  margin: 0 auto;
+  mix-blend-mode: screen;
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.message { margin-top: 1.75rem; }
+
+.seam {
+  display: block;
+  width: 2rem;
+  height: 1px;
+  margin: 0 auto 1.75rem;
+  background: #94515a;
+  box-shadow: 0 0 16px 3px #a02a3933;
+}
+
+.whisper {
+  margin: 0;
+  font-size: clamp(1.0625rem, 2.6vw, 1.3125rem);
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: .045em;
+  text-wrap: balance;
+}
+
+.soon {
+  margin: 1.125rem 0 0;
+  color: #9b979c;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: .75rem;
+  line-height: 1.8;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 400px) {
+  .crypt { padding-inline: 1.25rem; }
+  .message { margin-top: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .identity { animation: emerge 1.6s ease-out; }
+  @keyframes emerge {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
